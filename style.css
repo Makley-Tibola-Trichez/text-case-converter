@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-panel {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 50%);
+    background-color: #e3e3e3;
+    background-color: #ebecf1;
+    transition: all .5s cubic-bezier(.685,.0473,.346,1);
+}
+
+.card-header {
+	background-color: white;
+	border-bottom: 0px;
+}
+
+span.badge {
+	cursor: pointer;
+}
