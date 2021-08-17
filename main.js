@@ -1,34 +1,58 @@
 const tagBtns = document.querySelectorAll("span.badge");
+const txtArea = document.getElementById("insertedText");
+
+txtArea.addEventListener("keyup", function (e) {
+	const oldSelectedEl = document.querySelector(".bg-dark .text-light");
+	if (oldSelectedEl != null) {
+		oldSelectedEl.classList.remove("bg-dark");
+		oldSelectedEl.classList.remove("text-light");
+		oldSelectedEl.classList.add("bg-light");
+		oldSelectedEl.classList.add("text-dark");
+	}
+});
 
 tagBtns.forEach(el => {
 	el.addEventListener("click", function (e) {
 		const val = parseInt(el.getAttribute("value"));
 		const textArea = document.getElementById("insertedText");
+		const oldSelectedEl = document.querySelector(".bg-dark .text-light");
 
+		if (oldSelectedEl != null) {
+			oldSelectedEl.classList.remove("bg-dark");
+			oldSelectedEl.classList.remove("text-light");
+			oldSelectedEl.classList.add("bg-light");
+			oldSelectedEl.classList.add("text-dark");
+		}
+		if (el.classList.contains("bg-light")) {
+			el.classList.remove("bg-light");
+			el.classList.remove("text-dark");
+			el.classList.add("bg-dark");
+			el.classList.add("text-light");
+		}
 		switch (val) {
 			case 1:
-				textArea.value = textArea.value.toLowerCase();
+				textArea.value = textArea.value.toLowerCase().trim();
 				break;
 			case 2:
-				textArea.value = textArea.value.toUpperCase();
+				textArea.value = textArea.value.toUpperCase().trim();
 				break;
 			case 3:
-				textArea.value = allFirstLettersUp(textArea);
+				textArea.value = allFirstLettersUp(textArea).trim();
 				break;
 			case 4:
-				textArea.value = allLastLettersUp(textArea);
+				textArea.value = allLastLettersUp(textArea).trim();
 				break;
 			case 5:
-				textArea.value = phraseCase(textArea);
+				textArea.value = phraseCase(textArea).trim();
 				break;
 			case 6:
-				textArea.value = invertCase(textArea);
+				textArea.value = invertCase(textArea).trim();
 				break;
 			case 7:
-				textArea.value = oneDownOneUp(textArea);
+				textArea.value = oneDownOneUp(textArea).trim();
 				break;
 			case 8:
-				textArea.value = oneUpOneDown(textArea);
+				textArea.value = oneUpOneDown(textArea).trim();
 				break;
 		}
 	});
@@ -64,6 +88,8 @@ function phraseCase(text) {
 			if (hasDot) {
 				newText += letter.toUpperCase();
 				hasDot = false;
+			} else if (index === 0) {
+				newText += letter.toUpperCase();
 			} else {
 				newText += letter;
 			}

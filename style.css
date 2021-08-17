@@ -1,3 +1,8 @@
+:root {
+    --bs-dark: #212529;
+    --bs-light: #F8F9FA;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,4 +27,10 @@
 
 span.badge {
 	cursor: pointer;
+}
+
+span.badge:hover {
+    color: var(--bs-light)!important;
+    background-color: var(--bs-dark)!important;
+    transition: all 0.1s ease-in;
 }
