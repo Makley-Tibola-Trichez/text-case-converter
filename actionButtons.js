@@ -1,11 +1,16 @@
-document.getElementById("clear").addEventListener("click", () => {
-	document.getElementById("insertedText").value = '';
+document.getElementById("clear").addEventListener("click", e => document.getElementById("insertedText").value = '');
+
+document.getElementById("download").addEventListener("mousedown", (e) => {
+	e.preventDefault();
+	document.getElementById("download").style.pointerEvents = "none";
+	setTimeout(function () {
+		document.getElementById("download").style.pointerEvents = "auto";
+	}, 1200);
+	downloadTxtFile();
+	console.log("adasd");
 });
 
-document.getElementById("download").addEventListener("keyup", (e) => {
-	e.preventDefault();
-	downloadTxtFile();
-});
+document.getElementById("copy").addEventListener("click", copyText);
 
 function downloadTxtFile() {
 
@@ -15,4 +20,13 @@ function downloadTxtFile() {
 	element.setAttribute('download', 'document.txt');
 	element.click();
 
+}
+
+function copyText() {
+	const copyText = document.getElementById("insertedText");
+
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+	navigator.clipboard.writeText(copyText.value);
 }

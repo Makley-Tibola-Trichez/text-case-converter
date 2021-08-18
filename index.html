@@ -13,15 +13,15 @@
 </head>
 
 <body class="bg-dark">
-	<div class="mt-5 container">
+	<section class="mt-5 container">
 		<div class="col-12 card p-3">
-			<div class="card-header">
-				<h3>Text case converter</h3>
-			</div>
-			<div class="px-3 mb-3">
+			<header class="card-header">
+				<h1>Text case converter</h1>
+			</header>
+			<span class="px-3 mb-3">
 				Write yout text and change the way your it's Written!
-			</div>
-			<div class="col-md-12">
+			</span>
+			<main class="col-md-12">
 				<span class="badge bg-light text-dark" value="1">lower case</span>
 				<span class="badge bg-light text-dark" value="2">UPPER CASE</span>
 				<span class="badge bg-light text-dark" value="5">Sentence case</span>
@@ -36,15 +36,18 @@
 						<textarea class="form-control" id="insertedText" cols="30" rows="10"
 							placeholder="Insert your text here"></textarea>
 						<button id="copy" class="btn btn-secondary my-1">Copy</button>
-						<a id="download" href="javascript:void(0)" data-activated="false"
-							class="btn btn-secondary my-1">Download</a>
+						<a id="download" href="#" data-activated="false" class="btn btn-secondary my-1">Download
+						</a>
 						<button id="clear" class="btn btn-secondary my-1">Clear</button>
 
 					</div>
 				</div>
-			</div>
+			</main>
+			<footer class="card-footer">
+				all rights reserved
+			</footer>
 		</div>
-	</div>
+	</section>
 
 	<script src="./main.js" type="module"></script>
 	<script src="./actionButtons.js" type="module"></script>

@@ -25,6 +25,11 @@
 	border-bottom: 0px;
 }
 
+.card-footer {
+    background-color: white;
+    border: 0;
+}
+
 span.badge {
 	cursor: pointer;
 }
